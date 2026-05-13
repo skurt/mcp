@@ -5,7 +5,7 @@ from mcp.server.fastmcp import FastMCP
 ROOT = Path(__file__).parent
 PROMPTS_DIR = ROOT / "prompts"
 
-mcp = FastMCP("prompt-library")
+mcp = FastMCP("prompt-library", host="0.0.0.0", port=8000)
 
 # Lists all prompts available in the MCP server.
 @mcp.tool(
@@ -31,4 +31,4 @@ def get_prompt_file(name: str) -> str:
 
 if __name__ == "__main__":
     print("MCP server 'prompt-library' is running.", file=sys.stderr, flush=True)
-    mcp.run(transport="stdio")
+    mcp.run(transport="streamable-http")
