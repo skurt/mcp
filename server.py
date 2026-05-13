@@ -5,7 +5,7 @@ from mcp.server.fastmcp import FastMCP
 ROOT = Path(__file__).parent
 PROMPTS_DIR = ROOT / "prompts"
 
-mcp = FastMCP("prompt-library", host="0.0.0.0", port=8000)
+mcp = FastMCP("prompt-library", host="0.0.0.0", port=2304)
 
 # Lists all prompts available in the MCP server.
 @mcp.tool(
